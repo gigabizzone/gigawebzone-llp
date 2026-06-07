@@ -14,8 +14,9 @@ type PageHeroProps = {
   lead: ReactNode;
   secondaryHref: string;
   secondaryLabel: string;
-  proof: ProofItem[];
+  proof?: ProofItem[];
   visual: ReactNode;
+  primaryLabel?: string;
 };
 
 /**
@@ -33,6 +34,7 @@ export function PageHero({
   secondaryLabel,
   proof,
   visual,
+  primaryLabel = "Get a Free Consultation",
 }: PageHeroProps) {
   const rootRef = useRef<HTMLElement>(null);
 
@@ -103,14 +105,14 @@ export function PageHero({
           </p>
           <div className="hero-ctas reveal" data-d="3">
             <Button href={CONSULT_HREF} variant="primary" size="lg">
-              Get a Free Consultation
+              {primaryLabel}
               <ArrowRight />
             </Button>
             <Button href={secondaryHref} variant="ghost" size="lg">
               {secondaryLabel}
             </Button>
           </div>
-          <MiniProof items={proof} />
+          {proof && proof.length > 0 ? <MiniProof items={proof} /> : null}
         </div>
         {visual}
       </div>

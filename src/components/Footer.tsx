@@ -68,7 +68,7 @@ export function Footer() {
               <li><Link href="/industries">Industries</Link></li>
               <li><Link href="/portfolio">Portfolio</Link></li>
               <li><Link href="/about">About</Link></li>
-              <li><Link href="/blog">Blog &amp; Insights</Link></li>
+              <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
 
@@ -94,7 +94,11 @@ export function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span className="cprt">© 2026 GigaWebZone LLP. Design, Develop, Dominate.</span>
+          <div className="footer-legal">
+            <span className="cprt">© 2026 GigaWebZone LLP. Design, Develop, Dominate.</span>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Service</Link>
+          </div>
           <div className="footer-badges">
             <span className="b">DPIIT Recognised</span>
             <span className="b">Udyam Registered</span>

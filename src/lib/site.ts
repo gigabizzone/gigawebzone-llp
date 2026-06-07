@@ -17,12 +17,8 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-/**
- * Primary conversion target ("Get a Free Consultation").
- * Phase 1: the homepage final-CTA section (#contact) so the primary path works
- * before the Contact page exists. Becomes "/contact" in Phase 4.
- */
-export const CONSULT_HREF = "#contact";
+/** Primary conversion target ("Get a Free Consultation") — the Contact page. */
+export const CONSULT_HREF = "/contact";
 
 export const CONTACT = {
   phoneDisplay: "+91 8108 4005 99",

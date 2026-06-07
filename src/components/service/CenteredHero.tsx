@@ -11,7 +11,8 @@ type CenteredHeroProps = {
   eyebrow: string;
   title: ReactNode;
   lead: string;
-  proof: ProofItem[];
+  /** Optional mini-proof counters; omit for a lean hero (e.g. Contact). */
+  proof?: ProofItem[];
   /** Optional CTA row (rendered below the lead). */
   ctas?: ReactNode;
 };
@@ -21,6 +22,7 @@ type CenteredHeroProps = {
  * Same aurora background as the service PageHero, but single-column/centered.
  */
 export function CenteredHero({ current, eyebrow, title, lead, proof, ctas }: CenteredHeroProps) {
+  const hasProof = proof && proof.length > 0;
   const rootRef = useRef<HTMLElement>(null);
   useAuroraParallax(rootRef);
 
@@ -50,22 +52,24 @@ export function CenteredHero({ current, eyebrow, title, lead, proof, ctas }: Cen
           {lead}
         </p>
         {ctas}
-        <div
-          className="mini-proof reveal"
-          data-d="4"
-          style={{ justifyContent: "center", borderTop: "none" }}
-        >
-          {proof.map((it) => (
-            <div className="mp" key={it.label}>
-              {it.count !== undefined ? (
-                <CountUp className="mpn" to={it.count} suffix={it.suffix ?? ""} />
-              ) : (
-                <span className="mpn">{it.text}</span>
-              )}
-              <span className="mpl">{it.label}</span>
-            </div>
-          ))}
-        </div>
+        {hasProof ? (
+          <div
+            className="mini-proof reveal"
+            data-d="4"
+            style={{ justifyContent: "center", borderTop: "none" }}
+          >
+            {proof!.map((it) => (
+              <div className="mp" key={it.label}>
+                {it.count !== undefined ? (
+                  <CountUp className="mpn" to={it.count} suffix={it.suffix ?? ""} />
+                ) : (
+                  <span className="mpn">{it.text}</span>
+                )}
+                <span className="mpl">{it.label}</span>
+              </div>
+            ))}
+          </div>
+        ) : null}
       </div>
     </section>
   );
