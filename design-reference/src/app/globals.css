@@ -1,0 +1,66 @@
+/* GigaWebZone design tokens — ported from the HTML design reference.
+   Light is default; [data-theme="dark"] overrides. Brand accent identical
+   in both modes. Pair with Space Grotesk (display), Manrope (body),
+   Space Mono (mono) from Google Fonts. */
+
+:root {
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+
+  --accent: #4d52e3;
+  --accent-600: #3f44d6;
+  --accent-700: #343abf;
+  --accent-ink: #ffffff;
+  --accent-tint: #ecedfc;
+  --accent-link: #4046d4;
+
+  --g-orange: #f6a45e;
+  --g-pink: #ec4e9b;
+  --g-purple: #a866e6;
+  --brand-grad: linear-gradient(118deg, var(--g-orange) 0%, var(--g-pink) 46%, var(--g-purple) 100%);
+
+  --bg: #fafafb;
+  --bg-2: #f1f2f6;
+  --surface: #ffffff;
+  --surface-2: #fbfbfd;
+  --surface-hover: #f6f7fa;
+  --text: #1a1d24;
+  --text-2: #4c5360;
+  --text-3: #828897;
+  --border: #e6e8ec;
+  --border-2: #d8dbe2;
+
+  --radius: 16px;
+  --radius-lg: 24px;
+  --wrap: 1200px;
+}
+
+[data-theme="dark"] {
+  --accent-600: #5a5ff0;
+  --accent-tint: rgba(124, 128, 255, 0.14);
+  --accent-link: #9ea1ff;
+
+  --bg: #0f1115;
+  --bg-2: #0b0c10;
+  --surface: #161922;
+  --surface-2: #1b1f2a;
+  --surface-hover: #20242f;
+  --text: #e6e8ec;
+  --text-2: #a6acba;
+  --text-3: #767d8d;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-2: rgba(255, 255, 255, 0.16);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }

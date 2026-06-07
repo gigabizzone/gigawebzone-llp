@@ -1,0 +1,53 @@
+/* =========================================================================
+   React-specific additions layered on top of the ported design system.
+   Kept separate so gwz.css / gwz-pages.css remain a pristine copy of the
+   design reference.
+   ========================================================================= */
+
+/* ---- Mobile navigation drawer --------------------------------------- */
+.mobile-nav {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0 20px;
+  display: none;
+}
+.mobile-nav.open {
+  display: block;
+}
+@media (min-width: 1181px) {
+  /* Above the breakpoint the full inline nav is shown — never the drawer. */
+  .mobile-nav.open {
+    display: none;
+  }
+}
+.mobile-nav .wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mobile-nav a.m-link {
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-2);
+  transition: color 0.2s, background 0.2s;
+}
+.mobile-nav a.m-link:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+.mobile-nav .m-cta {
+  margin-top: 12px;
+}
+.mobile-nav .m-cta .btn {
+  width: 100%;
+}
