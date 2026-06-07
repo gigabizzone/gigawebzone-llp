@@ -5,16 +5,25 @@ import { IndustriesExplorer } from "@/components/industries/IndustriesExplorer";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "@/components/icons";
 import { CONTACT } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Industries We Build For — Education, Healthcare, E-commerce & more",
   description:
     "GigaWebZone builds websites, portals and apps across industries — education, healthcare, professional services, e-commerce, real estate, financial services, nonprofit, manufacturing and technology. See sector proof.",
+  alternates: { canonical: "/industries" },
 };
 
 export default function IndustriesPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Industries", path: "/industries" },
+        ])}
+      />
       <CenteredHero
         current="Industries"
         eyebrow="Industries"

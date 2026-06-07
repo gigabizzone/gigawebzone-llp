@@ -10,11 +10,16 @@ import { FAQ } from "@/components/service/FAQ";
 import { PageCta } from "@/components/service/PageCta";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight, Check } from "@/components/icons";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo";
+
+const DESCRIPTION =
+  "WordPress specialists with 12 years' expertise and 400+ builds. Custom themes & plugins, WooCommerce, headless WordPress, plus maintenance, recovery, backup and AMC support.";
 
 export const metadata: Metadata = {
-  title: "WordPress Development Company in India — Custom, WooCommerce, Headless",
-  description:
-    "WordPress specialists with 12 years' expertise and 400+ builds. Custom themes & plugins, WooCommerce, headless WordPress, plus maintenance, recovery, backup and AMC support.",
+  title: "WordPress Development Company — Custom, WooCommerce, Headless",
+  description: DESCRIPTION,
+  alternates: { canonical: "/wordpress" },
 };
 
 const sl = { fill: "none" as const, strokeWidth: 2, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
@@ -31,6 +36,20 @@ const WHY = [
 export default function WordPressPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "WordPress", path: "/wordpress" },
+          ]),
+          serviceJsonLd({
+            serviceType: "WordPress Development",
+            name: "WordPress Expertise",
+            description: DESCRIPTION,
+            path: "/wordpress",
+          }),
+        ]}
+      />
       <PageHero
         current="WordPress"
         eyebrow="WordPress · Our 12-year specialty"

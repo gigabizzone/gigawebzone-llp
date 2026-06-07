@@ -11,11 +11,16 @@ import { RelatedWork } from "@/components/service/RelatedWork";
 import { FAQ } from "@/components/service/FAQ";
 import { PageCta } from "@/components/service/PageCta";
 import { Shield } from "@/components/icons";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo";
+
+const DESCRIPTION =
+  "Custom web application & full-stack website development by GigaWebZone — React, Next.js, Node, Laravel. Headless builds, APIs, performance engineering. DPIIT-recognised, 400+ businesses served.";
 
 export const metadata: Metadata = {
-  title: "Full-Stack Web Development Company in Pune",
-  description:
-    "Custom web application & full-stack website development by GigaWebZone — React, Next.js, Node, Laravel. Headless builds, APIs, performance engineering. DPIIT-recognised, 400+ businesses served.",
+  title: "Full-Stack Web Development Company",
+  description: DESCRIPTION,
+  alternates: { canonical: "/web-development" },
 };
 
 const ic = { fill: "none" as const, strokeWidth: 1.9, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
@@ -23,6 +28,20 @@ const ic = { fill: "none" as const, strokeWidth: 1.9, strokeLinecap: "round" as 
 export default function WebDevelopmentPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Web Development", path: "/web-development" },
+          ]),
+          serviceJsonLd({
+            serviceType: "Full-Stack Web Development",
+            name: "Full-Stack Web Development",
+            description: DESCRIPTION,
+            path: "/web-development",
+          }),
+        ]}
+      />
       <PageHero
         current="Web Development"
         eyebrow="Full-Stack Web Development"

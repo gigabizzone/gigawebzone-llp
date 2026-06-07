@@ -9,11 +9,16 @@ import { CommitBand } from "@/components/service/CommitBand";
 import { FAQ } from "@/components/service/FAQ";
 import { PageCta } from "@/components/service/PageCta";
 import { Shield } from "@/components/icons";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo";
+
+const DESCRIPTION =
+  "GigaWebZone builds complex web platforms — e-commerce, LMS, booking, membership and directory/database portals. Multi-role systems with payments (UPI), WhatsApp and automation.";
 
 export const metadata: Metadata = {
   title: "Portals & Platform Development — E-commerce, LMS, Booking",
-  description:
-    "GigaWebZone builds complex web platforms — e-commerce, LMS, booking, membership and directory/database portals. Multi-role systems with payments (UPI), WhatsApp and automation.",
+  description: DESCRIPTION,
+  alternates: { canonical: "/portals-platforms" },
 };
 
 const sl = { fill: "none" as const, strokeWidth: 2, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
@@ -23,6 +28,20 @@ const ig = { fill: "none" as const, strokeWidth: 2, strokeLinecap: "round" as co
 export default function PortalsPlatformsPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Portals & Platforms", path: "/portals-platforms" },
+          ]),
+          serviceJsonLd({
+            serviceType: "Portal & Platform Development",
+            name: "Portals & Platforms",
+            description: DESCRIPTION,
+            path: "/portals-platforms",
+          }),
+        ]}
+      />
       <PageHero
         current="Portals & Platforms"
         eyebrow="Portals & Platforms"

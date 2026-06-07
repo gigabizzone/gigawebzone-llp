@@ -5,11 +5,21 @@ import { Steps } from "@/components/service/Steps";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ArrowUpRight } from "@/components/icons";
 import { CONTACT } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd, ORG_ID, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact GigaWebZone — Free Consultation",
   description:
-    "Contact GigaWebZone LLP for a free, no-obligation consultation. Call +91 8108 4005 99, email, or WhatsApp us. Pune-based full-stack web & app studio. We reply within one business day.",
+    "Contact GigaWebZone LLP for a free, no-obligation consultation. Call +91 8108 4005 99, email, or WhatsApp us. Full-stack web & app studio. We reply within one business day.",
+  alternates: { canonical: "/contact" },
+};
+
+const contactJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  url: `${SITE_URL}/contact`,
+  mainEntity: { "@id": ORG_ID },
 };
 
 const ci = { fill: "none" as const, strokeWidth: 2, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
@@ -17,6 +27,15 @@ const ci = { fill: "none" as const, strokeWidth: 2, strokeLinecap: "round" as co
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ]),
+          contactJsonLd,
+        ]}
+      />
       <CenteredHero
         current="Contact"
         eyebrow="Let's talk"

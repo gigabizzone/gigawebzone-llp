@@ -11,11 +11,16 @@ import { RelatedWork } from "@/components/service/RelatedWork";
 import { FAQ } from "@/components/service/FAQ";
 import { PageCta } from "@/components/service/PageCta";
 import { Shield } from "@/components/icons";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo";
+
+const DESCRIPTION =
+  "Mobile and web app development by GigaWebZone — cross-platform (Flutter, React Native), native, PWAs and web applications. Process-first and security-minded, built by an established engineering studio.";
 
 export const metadata: Metadata = {
-  title: "Mobile & Web App Development Company in India",
-  description:
-    "Mobile and web app development by GigaWebZone — cross-platform (Flutter, React Native), native, PWAs and web applications. Process-first, security-minded, built by a 5-year engineering studio.",
+  title: "Mobile & Web App Development Company",
+  description: DESCRIPTION,
+  alternates: { canonical: "/app-development" },
 };
 
 const sl = { fill: "none" as const, strokeWidth: 2, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
@@ -25,6 +30,20 @@ const uci = { fill: "none" as const, strokeWidth: 2, strokeLinecap: "round" as c
 export default function AppDevelopmentPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "App Development", path: "/app-development" },
+          ]),
+          serviceJsonLd({
+            serviceType: "Mobile & Web App Development",
+            name: "App Development",
+            description: DESCRIPTION,
+            path: "/app-development",
+          }),
+        ]}
+      />
       <PageHero
         current="App Development"
         eyebrow="App Development · Mobile & Web"

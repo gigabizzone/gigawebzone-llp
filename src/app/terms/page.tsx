@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "The terms governing the use of GigaWebZone LLP's website and the engagement of our web, app and WordPress development services.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

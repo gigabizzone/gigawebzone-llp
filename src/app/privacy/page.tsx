@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "How GigaWebZone LLP collects, uses, protects and shares personal data — in line with India's Digital Personal Data Protection (DPDP) Act 2023.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

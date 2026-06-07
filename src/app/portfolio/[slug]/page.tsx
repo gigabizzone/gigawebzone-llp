@@ -4,8 +4,10 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { PageCta } from "@/components/service/PageCta";
 import { ArrowUpRight } from "@/components/icons";
+import { JsonLd } from "@/components/JsonLd";
 import { CASE_STUDIES, caseStudyBySlug } from "@/lib/data/caseStudies";
 import { projectUrl } from "@/lib/data/projects";
+import { breadcrumbJsonLd, creativeWorkJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
   return CASE_STUDIES.map((c) => ({ slug: c.slug }));
@@ -22,6 +24,7 @@ export async function generateMetadata({
   return {
     title: `${cs.name} — Case Study`,
     description: cs.summary,
+    alternates: { canonical: `/portfolio/${cs.slug}` },
   };
 }
 
@@ -36,6 +39,21 @@ export default async function CaseStudyPage({
 
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Portfolio", path: "/portfolio" },
+            { name: cs.name, path: `/portfolio/${cs.slug}` },
+          ]),
+          creativeWorkJsonLd({
+            name: cs.name,
+            description: cs.summary,
+            path: `/portfolio/${cs.slug}`,
+            liveUrl: projectUrl(cs.domain),
+          }),
+        ]}
+      />
       <section className="page-hero">
         <div className="hero-bg">
           <div className="hero-grid-lines" />

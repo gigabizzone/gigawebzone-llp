@@ -8,11 +8,14 @@ import { Button } from "@/components/ui/Button";
 import { ArrowUpRight } from "@/components/icons";
 import { caseStudyBySlug } from "@/lib/data/caseStudies";
 import { projectUrl } from "@/lib/data/projects";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Portfolio — 45+ Live Projects",
   description:
     "Explore GigaWebZone's portfolio — 45+ live websites, portals and stores across education, healthcare, e-commerce, professional services, manufacturing and more. Filter by category and visit the live sites.",
+  alternates: { canonical: "/portfolio" },
 };
 
 const featured = caseStudyBySlug("borneo-hospitals")!;
@@ -20,6 +23,12 @@ const featured = caseStudyBySlug("borneo-hospitals")!;
 export default function PortfolioPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Portfolio", path: "/portfolio" },
+        ])}
+      />
       <CenteredHero
         current="Portfolio"
         eyebrow="Our work"

@@ -7,11 +7,21 @@ import { StackCard } from "@/components/service/StackCard";
 import { FeatureGrid } from "@/components/service/FeatureGrid";
 import { PageCta } from "@/components/service/PageCta";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd, ORG_ID, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "About GigaWebZone — Pune's Full-Stack Build Studio | Founder Kiran Mulay",
+  title: "About GigaWebZone — Full-Stack Build Studio | Founder Kiran Mulay",
   description:
-    "GigaWebZone LLP is a Pune-based full-stack build studio led by founder Kiran Mulay — DPIIT-recognised, debt-free, 15+ years and 400+ businesses served. Meet the team, our values and our credentials.",
+    "GigaWebZone LLP is a full-stack build studio led by founder Kiran Mulay — DPIIT-recognised, debt-free, 15+ years and 400+ businesses served. Meet the team, our values and our credentials.",
+  alternates: { canonical: "/about" },
+};
+
+const aboutJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  url: `${SITE_URL}/about`,
+  mainEntity: { "@id": ORG_ID },
 };
 
 const sl = { fill: "none" as const, strokeWidth: 2, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
@@ -38,6 +48,15 @@ const CREDS = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" },
+          ]),
+          aboutJsonLd,
+        ]}
+      />
       <PageHero
         current="About"
         eyebrow="About GigaWebZone"
