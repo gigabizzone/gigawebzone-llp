@@ -1,18 +1,18 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
+import { useRef, type HTMLAttributes, type ReactNode } from "react";
 
 type TiltCardProps = {
   className?: string;
   children: ReactNode;
-};
+} & Omit<HTMLAttributes<HTMLElement>, "className" | "children">;
 
 /**
  * Pointer-reactive card (the `.tilt` behavior from gwz.js). Always updates the
  * `--mx/--my` vars that drive the radial hover glow; adds the subtle 3D tilt
  * only when motion is allowed. Resets on leave.
  */
-export function TiltCard({ className, children }: TiltCardProps) {
+export function TiltCard({ className, children, ...rest }: TiltCardProps) {
   const ref = useRef<HTMLElement>(null);
 
   const onMove = (e: React.PointerEvent<HTMLElement>) => {
@@ -34,7 +34,13 @@ export function TiltCard({ className, children }: TiltCardProps) {
   };
 
   return (
-    <article ref={ref} className={className} onPointerMove={onMove} onPointerLeave={onLeave}>
+    <article
+      ref={ref}
+      className={className}
+      onPointerMove={onMove}
+      onPointerLeave={onLeave}
+      {...rest}
+    >
       {children}
     </article>
   );

@@ -56,6 +56,15 @@ export function Menu(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function Shield(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M12 2l8 3v6c0 5-3.4 9-8 11-4.6-2-8-6-8-11V5z" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  );
+}
+
 export function Star(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>

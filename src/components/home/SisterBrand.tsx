@@ -46,7 +46,7 @@ const SERVICES = [
 
 export function SisterBrand() {
   return (
-    <section className="section sister">
+    <section className="section sister" id="sister">
       <div className="wrap">
         <div className="sister-card reveal">
           <div className="aurora" aria-hidden="true">
