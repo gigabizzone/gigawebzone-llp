@@ -69,7 +69,7 @@ const PILLARS: Pillar[] = [
 
 export function ServicePillars() {
   return (
-    <section className="section" id="services">
+    <section className="section sec-aurora" id="services">
       <div className="wrap">
         <div className="section-head reveal">
           <span className="eyebrow">What we build</span>

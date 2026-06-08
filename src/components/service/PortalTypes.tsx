@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { TiltCard } from "@/components/ui/TiltCard";
+import { ProjectShot } from "@/components/ui/ProjectShot";
 import { ArrowRight } from "@/components/icons";
 
 export type PortalType = {
@@ -13,7 +14,7 @@ export type PortalType = {
   linkLabel: string;
   exampleName: string;
   exampleEx: string;
-  ph: string;
+  domain: string;
 };
 
 /** `.ptypes` — alternating content/visual rows, one per portal type. */
@@ -42,7 +43,11 @@ export function PortalTypes({ types }: { types: PortalType[] }) {
           </div>
           <TiltCard className="pt-visual reveal tilt" data-d="1">
             <div className="pt-card">
-              <div className="shot ph" data-ph={t.ph} />
+              <ProjectShot
+                domain={t.domain}
+                alt={`${t.exampleName} website screenshot`}
+                sizes="(max-width: 920px) 100vw, 480px"
+              />
               <div className="pc-meta">
                 <span className="nm">{t.exampleName}</span>
                 <span className="ex">{t.exampleEx}</span>

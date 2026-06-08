@@ -44,8 +44,16 @@ export function Button({
     );
   }
 
+  // External http(s) links (e.g. Calendly) open in a new tab unless the caller
+  // overrides target/rel. tel:/mailto:/#hash links are left as-is.
+  const isHttp = /^https?:\/\//i.test(href);
   return (
-    <a href={href} className={classes} {...rest}>
+    <a
+      href={href}
+      className={classes}
+      {...(isHttp ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      {...rest}
+    >
       {children}
     </a>
   );

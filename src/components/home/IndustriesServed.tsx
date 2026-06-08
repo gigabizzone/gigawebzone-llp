@@ -16,7 +16,7 @@ const INDUSTRIES = [
 
 export function IndustriesServed() {
   return (
-    <section className="section">
+    <section className="section sec-aurora">
       <div className="wrap">
         <div className="section-head center reveal">
           <span className="eyebrow">Industries we serve</span>

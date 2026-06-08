@@ -11,6 +11,7 @@ import { PageCta } from "@/components/service/PageCta";
 import { Shield } from "@/components/icons";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo";
+import { PROJECT_COUNT } from "@/lib/data/projects";
 
 const DESCRIPTION =
   "GigaWebZone builds complex web platforms — e-commerce, LMS, booking, membership and directory/database portals. Multi-role systems with payments (UPI), WhatsApp and automation.";
@@ -56,7 +57,7 @@ export default function PortalsPlatformsPage() {
         secondaryHref="#types"
         secondaryLabel="Explore platform types"
         proof={[
-          { count: 45, suffix: "+", label: "live projects" },
+          { count: PROJECT_COUNT, suffix: "+", label: "live projects" },
           { count: 400, suffix: "+", label: "businesses served" },
           { count: 15, suffix: "+", label: "years experience" },
         ]}
@@ -65,7 +66,7 @@ export default function PortalsPlatformsPage() {
             label="Platforms we build"
             layers={[
               { title: "E-commerce", sub: "stores & checkout", tools: ["Ayuratan"], icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...sl}><path d="M3 9l1-5h16l1 5M4 9h16v11H4zM9 13h6" /></svg> },
-              { title: "LMS", sub: "courses & learning", tools: ["Linguist"], icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...sl}><path d="M22 10L12 5 2 10l10 5 10-5z" /><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5" /></svg> },
+              { title: "LMS", sub: "courses & learning", tools: ["K Junction"], icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...sl}><path d="M22 10L12 5 2 10l10 5 10-5z" /><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5" /></svg> },
               { title: "Booking", sub: "scheduling", tools: ["Borneo"], icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...sl}><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18M8 15l2 2 4-4" /></svg> },
               { title: "Membership", sub: "subscriptions", tools: ["Samavesh"], icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...sl}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.9" /></svg> },
               { title: "Directory", sub: "listings & data", tools: ["Microdata"], icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...sl}><ellipse cx="12" cy="5" rx="8" ry="3" /><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5" /><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" /></svg> },
@@ -91,7 +92,7 @@ export default function PortalsPlatformsPage() {
                 linkLabel: "See e-commerce work",
                 exampleName: "Ayuratan",
                 exampleEx: "live · e-commerce",
-                ph: "screenshot · ayuratan.com",
+                domain: "ayuratan.com",
                 icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...pt}><path d="M3 9l1-5h16l1 5M4 9h16v11H4zM9 13h6" /></svg>,
               },
               {
@@ -101,9 +102,9 @@ export default function PortalsPlatformsPage() {
                 chips: ["Courses & lessons", "Enrolment", "Quizzes", "Certificates", "Progress tracking", "Live classes"],
                 who: "colleges, coaching institutes, e-learning brands.",
                 linkLabel: "See learning platforms",
-                exampleName: "Linguist",
+                exampleName: "The K Junction",
                 exampleEx: "live · LMS",
-                ph: "screenshot · linguist.co.in",
+                domain: "thekjunction.com",
                 icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...pt}><path d="M22 10L12 5 2 10l10 5 10-5z" /><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5" /></svg>,
               },
               {
@@ -115,7 +116,7 @@ export default function PortalsPlatformsPage() {
                 linkLabel: "See booking work",
                 exampleName: "Borneo Hospitals",
                 exampleEx: "live · healthcare",
-                ph: "screenshot · borneohospitals.com",
+                domain: "borneohospitals.com",
                 icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...pt}><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18M8 15l2 2 4-4" /></svg>,
               },
               {
@@ -127,7 +128,7 @@ export default function PortalsPlatformsPage() {
                 linkLabel: "See membership work",
                 exampleName: "Samavesh",
                 exampleEx: "live · community",
-                ph: "screenshot · samavesh.life",
+                domain: "samavesh.life",
                 icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...pt}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.9" /></svg>,
               },
               {
@@ -139,7 +140,7 @@ export default function PortalsPlatformsPage() {
                 linkLabel: "See directory work",
                 exampleName: "Microdata Global",
                 exampleEx: "live · database",
-                ph: "screenshot · microdataglobal.com",
+                domain: "microdataglobal.com",
                 icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...pt}><ellipse cx="12" cy="5" rx="8" ry="3" /><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5" /><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" /></svg>,
               },
             ]}

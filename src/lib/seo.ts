@@ -17,9 +17,11 @@ export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const LOGO_URL = `${SITE_URL}/assets/logo-horizontal.png`;
 
 export const SOCIAL_PROFILES = [
-  "https://www.linkedin.com/company/gigawebzone",
-  "https://www.instagram.com/gigawebzone",
-  "https://www.youtube.com/@gigawebzone",
+  "https://www.linkedin.com/company/gigawebzone-llp",
+  "https://www.instagram.com/gigawebzone/",
+  "https://www.facebook.com/gigawebzone/",
+  "https://www.youtube.com/@kiranmulay4262",
+  "https://in.pinterest.com/gigawebzone/",
 ];
 
 /** Site-wide Organization entity — referenced by other schema via @id. */
@@ -62,6 +64,14 @@ export function organizationJsonLd() {
       areaServed: "Worldwide",
       availableLanguage: ["en", "hi", "mr"],
     },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "08:00",
+        closes: "20:00",
+      },
+    ],
     sameAs: SOCIAL_PROFILES,
   };
 }

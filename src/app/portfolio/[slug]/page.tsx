@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { PageCta } from "@/components/service/PageCta";
 import { ArrowUpRight } from "@/components/icons";
+import { ProjectShot } from "@/components/ui/ProjectShot";
 import { JsonLd } from "@/components/JsonLd";
 import { CASE_STUDIES, caseStudyBySlug } from "@/lib/data/caseStudies";
 import { projectUrl } from "@/lib/data/projects";
@@ -93,7 +94,12 @@ export default async function CaseStudyPage({
           <div className="why-grid">
             <div className="reveal">
               <div className="pt-card">
-                <div className="shot ph" data-ph={`screenshot · ${cs.domain}`} style={{ aspectRatio: "16/11" }} />
+                <ProjectShot
+                  domain={cs.domain}
+                  alt={`${cs.name} website screenshot`}
+                  style={{ aspectRatio: "16 / 11" }}
+                  sizes="(max-width: 920px) 100vw, 560px"
+                />
                 <div className="pc-meta">
                   <span className="nm">{cs.name}</span>
                   <span className="ex">{cs.sector}</span>

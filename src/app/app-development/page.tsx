@@ -236,9 +236,9 @@ export default function AppDevelopmentPage() {
         titleStyle={{ fontSize: "clamp(28px,3.8vw,42px)", marginTop: 16 }}
         lead="Dedicated mobile-app case studies are growing as our app practice expands. Meanwhile, here's complex, app-like platform work that flexes the same engineering muscles."
         items={[
-          { tags: ["E-learning", "Web app"], title: "Linguist", desc: "An online learning platform with courses, enrolment and student dashboards.", ph: "screenshot · linguist.co.in" },
-          { tags: ["Learning", "Commerce"], title: "The K Junction", desc: "A combined learning-and-commerce platform with accounts, content and checkout.", ph: "screenshot · thekjunction.com" },
-          { tags: ["Fintech", "Web app"], title: "MyLoanMantra", desc: "A multi-step loan-application journey with secure, role-based flows.", ph: "screenshot · myloanmantra.co.in" },
+          { tags: ["Community", "Web app"], title: "Samavesh", desc: "A membership and community platform with profiles and gated content.", domain: "samavesh.life" },
+          { tags: ["Learning", "Commerce"], title: "The K Junction", desc: "A combined learning-and-commerce platform with accounts, content and checkout.", domain: "thekjunction.com" },
+          { tags: ["Fintech", "Web app"], title: "MyLoanMantra", desc: "A multi-step loan-application journey with secure, role-based flows.", domain: "myloanmantra.co.in" },
         ]}
       />
 

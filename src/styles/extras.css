@@ -4,6 +4,144 @@
    design reference.
    ========================================================================= */
 
+/* ---- Process steps: thin tilted connector arrows --------------------
+   A faint, slightly-tilted arrow bridges each step into the next. On hover
+   of the section it brightens and (with motion enabled) gently flows toward
+   the next step; hovering a single step nudges its arrow forward. Only shown
+   on the desktop single-row layout (hidden once the grid wraps). */
+@media (min-width: 1001px) {
+  .steps-connected .step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -29px;
+    width: 38px;
+    height: 16px;
+    transform: translateY(-50%) rotate(-8deg);
+    background: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='40'%20height='16'%20viewBox='0%200%2040%2016'%20fill='none'%20stroke='%234d52e3'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M1%208h30'/%3E%3Cpath%20d='M25%203l6%205-6%205'/%3E%3C/svg%3E")
+      center / contain no-repeat;
+    opacity: 0.45;
+    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .steps-connected:hover .step:not(:last-child)::after {
+    opacity: 1;
+  }
+  .steps-connected .step:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) rotate(-8deg) translateX(5px);
+  }
+  /* Continuous flow only when motion is allowed (gwz.css gates via html.anim). */
+  html.anim .steps-connected:hover .step:not(:last-child)::after {
+    animation: arrowFlow 1.3s var(--ease) infinite;
+  }
+}
+@keyframes arrowFlow {
+  0%,
+  100% {
+    transform: translateY(-50%) rotate(-8deg) translateX(0);
+  }
+  50% {
+    transform: translateY(-50%) rotate(-8deg) translateX(5px);
+  }
+}
+
+/* ---- Subtle brand aurora behind otherwise-plain sections ------------
+   Echoes the hero aurora so text/card-heavy sections feel less flat. Very
+   low opacity and brand-aligned (periwinkle → pink → purple), works in both
+   themes. Content (.wrap) stays above the glow. */
+.sec-aurora {
+  position: relative;
+  overflow: hidden;
+}
+.sec-aurora > .wrap {
+  position: relative;
+  z-index: 1;
+}
+.sec-aurora::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(46% 55% at 6% -5%, var(--accent-tint), transparent 60%),
+    radial-gradient(40% 48% at 96% 105%, rgba(236, 78, 155, 0.1), transparent 64%),
+    radial-gradient(38% 42% at 62% 118%, rgba(168, 102, 230, 0.08), transparent 70%);
+}
+[data-theme="dark"] .sec-aurora::before {
+  opacity: 0.75;
+}
+
+/* ---- Project screenshots (ProjectShot) ------------------------------
+   Real screenshots fill the `.shot` box and cover-crop to each slot's ratio.
+   Neutral bg shows if an image is ever missing. Gallery thumbnails are 1:1
+   to match the square source with no cropping. */
+.shot {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+.gcard .shot {
+  aspect-ratio: 1 / 1;
+}
+
+/* ---- Testimonial photo avatars -------------------------------------
+   Real client photo fills the circular avatar; the gradient ring shows
+   only as a fallback (initials) when no photo is set. */
+.tst-card .who .av {
+  overflow: hidden;
+}
+.tst-card .who .av img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ---- Industries-served tiles: hover lift (clickable tiles only) ------
+   The home "Industries we serve" grid uses clickable <a class="uc"> tiles
+   with no hover state. Add a simple, on-brand lift + shadow + accent, in
+   keeping with the other cards. Scoped to a.uc so the non-clickable .uc
+   tiles on the App/WordPress pages are unchanged. */
+a.uc {
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease),
+    border-color 0.2s, color 0.2s;
+}
+a.uc:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-2);
+  color: var(--accent-link);
+}
+
+/* ---- Service pillars: keep text readable on hover -------------------
+   The hover glow (.pillar::before, an --accent-tint radial) could paint
+   ABOVE the card text because transform-style:preserve-3d re-sorts the
+   pseudo-element above the content in some browsers. Flatten the card — it
+   still tilts/lifts via TiltCard's parent transform, exactly like the
+   portfolio cards — so the glow stays behind the text. The icon's hover
+   "pop" is re-done in 2D since translateZ no longer applies. */
+.pillar {
+  transform-style: flat;
+}
+.pillar::before {
+  z-index: 0;
+}
+.pillar > * {
+  position: relative;
+  z-index: 1;
+}
+/* keep the absolutely-positioned number/badge anchored */
+.pillar > .pnum,
+.pillar > .badge-specialty {
+  position: absolute;
+}
+.pillar:hover .pic {
+  transform: translateY(-5px) scale(1.04);
+}
+
 /* ---- Accessibility: skip link + focus ------------------------------- */
 .skip-link {
   position: fixed;

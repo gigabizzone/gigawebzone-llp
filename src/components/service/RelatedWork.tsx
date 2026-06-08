@@ -1,13 +1,14 @@
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import { TiltCard } from "@/components/ui/TiltCard";
+import { ProjectShot } from "@/components/ui/ProjectShot";
 import { ArrowRight } from "@/components/icons";
 
 export type WorkItem = {
   tags: string[];
   title: string;
   desc: string;
-  ph: string;
+  domain: string;
 };
 
 type RelatedWorkProps = {
@@ -51,7 +52,11 @@ export function RelatedWork({
         <div className="pf-grid">
           {items.map((w, i) => (
             <TiltCard className="pf-card reveal tilt" data-d={i + 1} key={w.title}>
-              <div className="shot ph" data-ph={w.ph} />
+              <ProjectShot
+                domain={w.domain}
+                alt={`${w.title} website screenshot`}
+                sizes="(max-width: 620px) 100vw, (max-width: 920px) 33vw, 360px"
+              />
               <div className="meta">
                 <div className="tags">
                   {w.tags.map((t) => (

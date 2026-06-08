@@ -1,35 +1,8 @@
+import Image from "next/image";
 import { Star } from "@/components/icons";
+import { TESTIMONIALS } from "@/lib/data/testimonials";
 
-type Testimonial = {
-  initials: string;
-  name: string;
-  title: string;
-  quote: string;
-};
-
-const TESTIMONIALS: Testimonial[] = [
-  {
-    initials: "SM",
-    name: "Dr. Santosh Madrewar",
-    title: "CEO, Borneo Hospitals",
-    quote:
-      "The booking portal they built cut our front-desk calls in half. They understood the clinic workflow better than vendors twice their size.",
-  },
-  {
-    initials: "AB",
-    name: "Anuja Brahma",
-    title: "Principal, Seth Hirachand Mutha College",
-    quote:
-      "Our admissions portal handles 6,000 students without a hiccup. Documented, maintainable, and delivered on the date they promised.",
-  },
-  {
-    initials: "RA",
-    name: "Rahul Ambegaokar",
-    title: "Founder & CEO, GroundZero LLP",
-    quote:
-      "We came for a WordPress refresh and left with a proper commerce platform. Checkout conversion is up 42% — the numbers speak.",
-  },
-];
+const HOME_TESTIMONIALS = TESTIMONIALS.slice(0, 6);
 
 export function Testimonials() {
   return (
@@ -40,7 +13,7 @@ export function Testimonials() {
           <h2>Trusted by the people who run the place.</h2>
         </div>
         <div className="tst-grid">
-          {TESTIMONIALS.map((t) => (
+          {HOME_TESTIMONIALS.map((t) => (
             <figure className="tst-card reveal" key={t.name}>
               <div className="quote-mark">&ldquo;</div>
               <div className="stars">
@@ -50,7 +23,13 @@ export function Testimonials() {
               </div>
               <blockquote>{t.quote}</blockquote>
               <figcaption className="who">
-                <span className="av">{t.initials}</span>
+                <span className="av">
+                  {t.image ? (
+                    <Image src={t.image} alt={t.name} width={46} height={46} />
+                  ) : (
+                    t.initials
+                  )}
+                </span>
                 <span>
                   <span className="nm">{t.name}</span>
                   <span className="ti">{t.title}</span>

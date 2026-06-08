@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { TiltCard } from "@/components/ui/TiltCard";
+import { ProjectShot } from "@/components/ui/ProjectShot";
 import { ArrowRight } from "@/components/icons";
 
 type Work = {
@@ -7,7 +8,7 @@ type Work = {
   desc: string;
   tags: string[];
   feature?: boolean;
-  ph: string;
+  domain: string;
   cta: string;
 };
 
@@ -17,28 +18,29 @@ const WORK: Work[] = [
     desc: "A multi-department hospital platform — services, doctors and patient enquiry flows, built and maintained end to end.",
     tags: ["Healthcare", "Portal"],
     feature: true,
-    ph: "project shot · 1280×720",
+    domain: "borneohospitals.com",
     cta: "View case study",
   },
   {
-    title: "Linguist",
-    desc: "An online learning platform with courses and student dashboards.",
-    tags: ["Education", "LMS"],
-    ph: "project shot",
+    title: "Seth Hirachand Mutha College",
+    desc: "An admissions portal handling thousands of students — documented, maintainable, delivered on time.",
+    tags: ["Education", "Portal"],
+    domain: "shmutha.org",
     cta: "View",
   },
   {
     title: "Ayuratan",
     desc: "A WooCommerce store for a wellness brand, tuned to convert.",
     tags: ["E-commerce", "WooCommerce"],
-    ph: "project shot",
-    cta: "View",
+    feature: true,
+    domain: "ayuratan.com",
+    cta: "View case study",
   },
   {
     title: "MyLoanMantra",
     desc: "A trust-first loan-services journey with secure application flows.",
     tags: ["Fintech", "Web App"],
-    ph: "project shot",
+    domain: "myloanmantra.co.in",
     cta: "View",
   },
   {
@@ -46,21 +48,21 @@ const WORK: Work[] = [
     desc: "A combined learning-and-commerce platform with accounts, content and checkout.",
     tags: ["E-learning", "Commerce"],
     feature: true,
-    ph: "project shot · 1280×720",
+    domain: "thekjunction.com",
     cta: "View case study",
   },
   {
-    title: "Sattvam Agro",
-    desc: "An agro-commerce store with catalog, payments and orders.",
-    tags: ["Agro", "E-commerce"],
-    ph: "project shot",
+    title: "GroundZero",
+    desc: "A performance-focused commerce build for an automotive accessories brand.",
+    tags: ["E-commerce", "Automotive"],
+    domain: "groundzero.net.in",
     cta: "View",
   },
 ];
 
 export function FeaturedWork() {
   return (
-    <section className="section" id="portfolio">
+    <section className="section sec-aurora" id="portfolio">
       <div className="wrap">
         <div className="section-head reveal">
           <span className="eyebrow">Selected work</span>
@@ -76,10 +78,11 @@ export function FeaturedWork() {
               key={w.title}
               className={`pf-card reveal tilt${w.feature ? " pf-feature" : ""}`}
             >
-              <div
-                className="shot ph"
-                data-ph={w.ph}
+              <ProjectShot
+                domain={w.domain}
+                alt={`${w.title} website screenshot`}
                 style={w.feature ? { minHeight: 300 } : undefined}
+                sizes="(max-width: 620px) 100vw, (max-width: 1080px) 50vw, 380px"
               />
               <div className="meta">
                 <div className="tags">

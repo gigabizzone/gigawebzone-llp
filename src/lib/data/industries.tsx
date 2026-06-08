@@ -35,7 +35,7 @@ export const INDUSTRIES: Industry[] = [
     caps: ["Admissions portals", "LMS / e-learning", "Student dashboards", "Events & notices", "Online payments"],
     projects: [
       { name: "Seth Hirachand Mutha College", tag: "Education", domain: "shmutha.org" },
-      { name: "Linguist", tag: "LMS · e-learning", domain: "linguist.co.in" },
+      { name: "The K Junction", tag: "E-learning", domain: "thekjunction.com" },
       { name: "Prerana Classes", tag: "Coaching", domain: "preranaclasses.in" },
     ],
     quote: {
@@ -113,8 +113,8 @@ export const INDUSTRIES: Industry[] = [
     caps: ["WooCommerce / custom", "UPI & cards", "Inventory", "Coupons & offers", "Shipping"],
     projects: [
       { name: "Ayuratan", tag: "Wellness commerce", domain: "ayuratan.com" },
-      { name: "GZDrones", tag: "E-commerce", domain: "gzdrones.com" },
-      { name: "Sattvam Agro", tag: "Agro commerce", domain: "sattvamagro.in" },
+      { name: "GroundZero", tag: "Auto commerce", domain: "groundzero.net.in" },
+      { name: "Devintech", tag: "E-commerce", domain: "devintech.net" },
     ],
     quote: {
       text: "Checkout conversion jumped after the rebuild — and the numbers speak for themselves.",
@@ -229,7 +229,7 @@ export const INDUSTRIES: Industry[] = [
     ],
     caps: ["Modern design", "Performance", "CMS / blog", "Branding", "Integrations"],
     projects: [
-      { name: "5 Days Website", tag: "Technology", domain: "5dayswebsite.in" },
+      { name: "Jaikrit Speaker Bureau", tag: "Media & events", domain: "jaikritspeakerbureau.com" },
       { name: "Jaikrit Branding", tag: "Media & branding", domain: "jaikritbranding.com" },
       { name: "Doctor WordPress", tag: "Technology", domain: "doctorwordpress.in" },
     ],

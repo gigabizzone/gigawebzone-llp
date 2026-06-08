@@ -17,8 +17,8 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-/** Primary conversion target ("Get a Free Consultation") — the Contact page. */
-export const CONSULT_HREF = "/contact";
+/** Primary conversion target ("Get a Free Consultation") — Calendly 30-min booking. */
+export const CONSULT_HREF = "https://calendly.com/gigawebzone/30min";
 
 export const CONTACT = {
   phoneDisplay: "+91 8108 4005 99",
@@ -27,12 +27,13 @@ export const CONTACT = {
   email: "mail@gigawebzone.com",
   address:
     "GigaWebZone LLP, Datta Krupa, Devachi Jali, Manjarwadi Road, Narayangaon, Junnar, Maharashtra 410504",
-  hours: "Mon–Fri · 7am – 9pm IST",
+  hours: "Mon–Sat · 8am – 8pm IST · Sun closed",
 };
 
 export const SOCIALS = {
-  linkedin: "https://www.linkedin.com/company/gigawebzone",
-  instagram: "https://www.instagram.com/gigawebzone",
-  youtube: "https://www.youtube.com/@gigawebzone",
-  x: "https://x.com/gigawebzone",
+  linkedin: "https://www.linkedin.com/company/gigawebzone-llp",
+  instagram: "https://www.instagram.com/gigawebzone/",
+  facebook: "https://www.facebook.com/gigawebzone/",
+  youtube: "https://www.youtube.com/@kiranmulay4262",
+  pinterest: "https://in.pinterest.com/gigawebzone/",
 };

@@ -4,17 +4,17 @@ import { CenteredHero } from "@/components/service/CenteredHero";
 import { SectionHead } from "@/components/service/SectionHead";
 import { PageCta } from "@/components/service/PageCta";
 import { PortfolioGallery } from "@/components/portfolio/PortfolioGallery";
+import { ProjectShot } from "@/components/ui/ProjectShot";
 import { Button } from "@/components/ui/Button";
 import { ArrowUpRight } from "@/components/icons";
 import { caseStudyBySlug } from "@/lib/data/caseStudies";
-import { projectUrl } from "@/lib/data/projects";
+import { PROJECTS, projectUrl } from "@/lib/data/projects";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Portfolio — 45+ Live Projects",
-  description:
-    "Explore GigaWebZone's portfolio — 45+ live websites, portals and stores across education, healthcare, e-commerce, professional services, manufacturing and more. Filter by category and visit the live sites.",
+  title: `Portfolio — ${PROJECTS.length}+ Live Projects`,
+  description: `Explore GigaWebZone's portfolio — ${PROJECTS.length}+ live websites, portals and stores across education, healthcare, e-commerce, professional services, manufacturing and more. Filter by category and visit the live sites.`,
   alternates: { canonical: "/portfolio" },
 };
 
@@ -32,10 +32,10 @@ export default function PortfolioPage() {
       <CenteredHero
         current="Portfolio"
         eyebrow="Our work"
-        title={<>45+ live projects. <span className="grad-text">Proof, not promises.</span></>}
+        title={<>{PROJECTS.length}+ live projects. <span className="grad-text">Proof, not promises.</span></>}
         lead="Every one of these is in production, serving a real business. Filter by category, then click through to the live site — the work speaks for itself."
         proof={[
-          { count: 45, suffix: "+", label: "live projects" },
+          { count: PROJECTS.length, suffix: "+", label: "live projects" },
           { count: 400, suffix: "+", label: "businesses served" },
           { count: 9, label: "industries" },
         ]}
@@ -50,7 +50,12 @@ export default function PortfolioPage() {
           <div className="why-grid">
             <div className="reveal">
               <div className="pt-card">
-                <div className="shot ph" data-ph={`screenshot · ${featured.domain}`} style={{ aspectRatio: "16/11" }} />
+                <ProjectShot
+                  domain={featured.domain}
+                  alt={`${featured.name} website screenshot`}
+                  style={{ aspectRatio: "16 / 11" }}
+                  sizes="(max-width: 920px) 100vw, 560px"
+                />
                 <div className="pc-meta">
                   <span className="nm">{featured.name}</span>
                   <span className="ex">{featured.sector}</span>
@@ -120,7 +125,7 @@ export default function PortfolioPage() {
 
       <section className="section" id="work">
         <div className="wrap">
-          <SectionHead center eyebrow="The full library" title="Browse all 45 live projects.">
+          <SectionHead center eyebrow="The full library" title={`Browse all ${PROJECTS.length} live projects.`}>
             Filter by category, then visit any site. Projects tagged{" "}
             <Link href="#work" className="accent-text">Case study</Link> open a full
             write-up. (Thumbnails are placeholders — real screenshots drop straight in.)

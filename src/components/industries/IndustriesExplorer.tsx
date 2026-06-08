@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { ProjectShot } from "@/components/ui/ProjectShot";
 import { ArrowRight } from "@/components/icons";
 import { INDUSTRIES } from "@/lib/data/industries";
 
@@ -72,7 +73,11 @@ export function IndustriesExplorer() {
               <div className="id-projects">
                 {ind.projects.map((p) => (
                   <div className="id-proj" key={p.domain}>
-                    <div className="shot ph" data-ph={p.domain} />
+                    <ProjectShot
+                      domain={p.domain}
+                      alt={`${p.name} website screenshot`}
+                      sizes="(max-width: 620px) 100vw, (max-width: 920px) 50vw, 220px"
+                    />
                     <div className="pm">
                       <span className="n">{p.name}</span>
                       <span className="t">{p.tag}</span>

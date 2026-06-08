@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "@/components/icons";
-import { CONTACT } from "@/lib/site";
+import { CONTACT, CONSULT_HREF } from "@/lib/site";
 
 /**
  * Final CTA band. Its id="contact" is the scroll target for the header / hero
@@ -23,7 +23,7 @@ export function FinalCta() {
           with a clear, honest scope — usually within one working day.
         </p>
         <div className="hero-ctas reveal" data-d="3" style={{ justifyContent: "center" }}>
-          <Button href={CONTACT.phoneHref} variant="primary" size="lg">
+          <Button href={CONSULT_HREF} variant="primary" size="lg">
             Get a Free Consultation
             <ArrowRight />
           </Button>

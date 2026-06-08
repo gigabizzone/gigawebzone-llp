@@ -88,8 +88,10 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${manrope.variable} ${spaceMono.variable}`}
     >
-      {/* data-hero drives the homepage hero-variant visibility (Variant B). */}
-      <body data-hero="b">
+      {/* data-hero drives the homepage hero-variant visibility (Variant B).
+          suppressHydrationWarning: some browser extensions (e.g. ColorZilla adds
+          cz-shortcut-listen) mutate <body> before React hydrates. */}
+      <body data-hero="b" suppressHydrationWarning>
         <a href="#top" className="skip-link">
           Skip to content
         </a>

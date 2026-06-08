@@ -37,7 +37,7 @@ export function Process() {
             black boxes.
           </p>
         </div>
-        <div className="steps">
+        <div className="steps steps-connected">
           {STEPS.map((s) => (
             <div className="step reveal" key={s.num}>
               <div className="sn">{s.num}</div>

@@ -56,7 +56,7 @@ export default function ContactPage() {
                 <div>
                   <div className="cl">Let&apos;s talk</div>
                   <div className="cv"><a href={CONTACT.phoneHref}>{CONTACT.phoneDisplay}</a></div>
-                  <div className="cs">Call us Mon–Fri, 7am – 9pm IST</div>
+                  <div className="cs">Call us anytime — no time restriction</div>
                 </div>
               </div>
               <div className="contact-item wa reveal" data-d="2">
@@ -95,8 +95,8 @@ export default function ContactPage() {
                 </span>
                 <div>
                   <div className="cl">Working hours</div>
-                  <div className="cv">Mon – Fri · 7am – 9pm IST</div>
-                  <div className="cs">Weekend enquiries answered next business day</div>
+                  <div className="cv">Mon – Sat · 8am – 8pm IST</div>
+                  <div className="cs">Sunday closed · call anytime</div>
                 </div>
               </div>
             </div>

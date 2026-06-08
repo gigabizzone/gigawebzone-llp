@@ -1,5 +1,5 @@
 /**
- * Portfolio inventory — all 45 live projects (PRD Appendix A), with the
+ * Portfolio inventory — all live projects (PRD Appendix A), with the
  * gallery filter category, display tags, and a flag for the projects that have
  * a full case-study detail page (PRD §10.7: convert 6–10 into case studies).
  */
@@ -50,7 +50,6 @@ export const PROJECTS: Project[] = [
   { name: "Aura Science", domain: "aurascience.in", cat: "prof", tags: ["Professional"] },
   { name: "Vastu Aura", domain: "vastuaura.in", cat: "prof", tags: ["Vastu", "Professional"] },
   { name: "IBDP7", domain: "ibdp7.com", cat: "edu", tags: ["Education"] },
-  { name: "5 Days Website", domain: "5dayswebsite.in", cat: "tech", tags: ["Technology"] },
   { name: "Fidelity Intl Exports", domain: "fidelityinternationalexports.in", cat: "commercial", tags: ["Exports", "Commercial"] },
   { name: "RPTO India", domain: "rptoindia.com", cat: "commercial", tags: ["Automotive"] },
   { name: "Jaikrit Speaker Bureau", domain: "jaikritspeakerbureau.com", cat: "tech", tags: ["Media", "Events"] },
@@ -61,16 +60,28 @@ export const PROJECTS: Project[] = [
   { name: "Daivjyotsh", domain: "daivjyotsh.com", cat: "edu", tags: ["Education", "Professional"] },
   { name: "Jaikrit Branding", domain: "jaikritbranding.com", cat: "tech", tags: ["Branding", "Media"] },
   { name: "Vastu My Home", domain: "vastumyhome.com", cat: "prof", tags: ["Vastu"] },
-  { name: "GZDrones", domain: "gzdrones.com", cat: "ecom", tags: ["E-commerce"] },
   { name: "KFPCL Warehouse", domain: "kfpclwarehouse.in", cat: "commercial", tags: ["Warehousing"] },
-  { name: "GroundZero", domain: "groundzero.net.in", cat: "ecom", tags: ["E-commerce", "Automotive"], slug: "groundzero" },
-  { name: "Sattvam Agro", domain: "sattvamagro.in", cat: "ecom", tags: ["Agro", "E-commerce"], slug: "sattvam-agro" },
-  { name: "Bhavya Warehousing", domain: "bhavyawarehousing.com", cat: "commercial", tags: ["Warehousing"] },
-  { name: "The K Junction", domain: "thekjunction.com", cat: "edu", tags: ["E-learning", "Commerce"], slug: "the-k-junction" },
-  { name: "Linguist", domain: "linguist.co.in", cat: "edu", tags: ["E-learning"], slug: "linguist" },
-  { name: "Sadhubella College", domain: "sadhubellacollege.org", cat: "edu", tags: ["Education"] },
+  { name: "GroundZero", domain: "groundzero.net.in", cat: "ecom", tags: ["E-commerce", "Automotive"], slug: "groundzero" },  { name: "Bhavya Warehousing", domain: "bhavyawarehousing.com", cat: "commercial", tags: ["Warehousing"] },
+  { name: "The K Junction", domain: "thekjunction.com", cat: "edu", tags: ["E-learning", "Commerce"], slug: "the-k-junction" },  { name: "Sadhubella College", domain: "sadhubellacollege.org", cat: "edu", tags: ["Education"] },
   { name: "Doctor WordPress", domain: "doctorwordpress.in", cat: "tech", tags: ["Technology"] },
+  { name: "Ayuratan Ayurvedics", domain: "ayuratanayurvedics.com", cat: "health", tags: ["Healthcare", "Ayurveda"] },
+  { name: "Dr Mohan Venkatesh Pulle", domain: "drmohanvenkateshpulle.com", cat: "health", tags: ["Healthcare", "Professional"] },
+  { name: "Siddharth College of Pharmacy", domain: "siddharthcollegeofpharmacy.com", cat: "edu", tags: ["Education", "Pharmacy"] },
+  { name: "Shri Gauranga Das", domain: "gaurangadas.com", cat: "prof", tags: ["Professional", "Spiritual"] },
+  { name: "Horta Nutrition", domain: "hortanutrition.com", cat: "health", tags: ["Healthcare", "Nutrition"] },
+  { name: "Jhanvi Integrated Solutions", domain: "jhanvint.com", cat: "commercial", tags: ["B2B", "Commercial"] },
+  { name: "Mahalaxmi Agarbatti", domain: "mahalaxmiagarbatti.in", cat: "ecom", tags: ["E-commerce", "Retail"] },
+  { name: "Kiara Jewellery", domain: "kiarajewellery.com", cat: "commercial", tags: ["Jewellery", "Manufacturing"] },
+  { name: "MahaNewss", domain: "mahanewss.com", cat: "tech", tags: ["Media", "News"] },
+  { name: "A Heart Connection", domain: "aheartconnection.com", cat: "prof", tags: ["Wellness", "Coaching"] },
+  { name: "Farmer's Basket", domain: "farmersbasket.online", cat: "ecom", tags: ["E-commerce", "Organic"] },
+  { name: "Chevisance Shipping", domain: "chevisance.com", cat: "commercial", tags: ["Logistics", "Shipping"] },
+  { name: "Nagesh Jadhav", domain: "nageshjadhav.in", cat: "prof", tags: ["Professional", "Education"] },
+  { name: "BOSLA — Science Librarians' Association", domain: "bosla.in", cat: "edu", tags: ["Association", "Library"] },
 ];
+
+/** Total live projects — single source of truth for the "live projects" counters. */
+export const PROJECT_COUNT = PROJECTS.length;
 
 export const PORTFOLIO_FILTERS: { key: PortfolioCat | "all"; label: string }[] = [
   { key: "all", label: "All" },
@@ -86,5 +97,8 @@ export const PORTFOLIO_FILTERS: { key: PortfolioCat | "all"; label: string }[] =
 ];
 
 export const projectUrl = (domain: string) => `https://${domain}`;
+/** Local screenshot path for a project (matches uploaded /assets/portfolio files). */
+export const portfolioImage = (domain: string) =>
+  `/assets/portfolio/${domain.replace(/\./g, "-")}.webp`;
 export const countFor = (key: PortfolioCat | "all") =>
   key === "all" ? PROJECTS.length : PROJECTS.filter((p) => p.cat === key).length;

@@ -9,6 +9,7 @@ import { PageCta } from "@/components/service/PageCta";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbJsonLd, ORG_ID, SITE_URL } from "@/lib/seo";
+import { PROJECT_COUNT } from "@/lib/data/projects";
 
 export const metadata: Metadata = {
   title: "About GigaWebZone — Full-Stack Build Studio | Founder Kiran Mulay",
@@ -28,12 +29,12 @@ const sl = { fill: "none" as const, strokeWidth: 2, strokeLinecap: "round" as co
 const ic = { fill: "none" as const, strokeWidth: 1.9, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
 
 const TEAM = [
-  { name: "Chandrakant Korde", role: "Sr. Web Developer · Server Management Expert", initials: "CK" },
-  { name: "Shivani Patidar", role: "UI / UX Expert", initials: "SP" },
-  { name: "Prajakta Mulay", role: "Content Writer · Social Media Marketing", initials: "PM" },
-  { name: "Manisha Mulay", role: "Accounts & Admin", initials: "MM" },
-  { name: "Manasi Wadekar", role: "Marketing / Sales Consultant", initials: "MW" },
-  { name: "Sagar Wadekar", role: "System Design Expert", initials: "SW" },
+  { name: "Chandrakant Korde", role: "Sr. Web Developer · Server Management Expert", initials: "CK", image: "/assets/team/chandrakant.jpg" },
+  { name: "Shivani Patidar", role: "UI / UX Expert", initials: "SP", image: "/assets/team/shivani.jpg" },
+  { name: "Prajakta Mulay", role: "Content Writer · Social Media Marketing", initials: "PM", image: "/assets/team/prajakta.jpg" },
+  { name: "Manisha Mulay", role: "Accounts & Admin", initials: "MM", image: "/assets/team/manisha.jpg" },
+  { name: "Manasi Wadekar", role: "Marketing / Sales Consultant", initials: "MW", image: "/assets/team/manasi.jpg" },
+  { name: "Sagar Wadekar", role: "System Design Expert", initials: "SW", image: "/assets/team/sagar.jpg" },
 ];
 
 const CREDS = [
@@ -41,7 +42,7 @@ const CREDS = [
   { cl: "MSME registration", cv: "Udyam Registered", small: "UDYAM-MH-26-0247635" },
   { cl: "Legal entity", cv: "LLP Registered", small: "LLPIN AAV-4776" },
   { cl: "Track record", cv: "15+ years experience", small: "Debt-free, profitable" },
-  { cl: "Relationships", cv: "400+ businesses", small: "45+ live projects" },
+  { cl: "Relationships", cv: "400+ businesses", small: `${PROJECT_COUNT}+ live projects` },
   { cl: "Based in", cv: "Pune, India", small: "Narayangaon, Junnar" },
 ];
 
@@ -77,7 +78,7 @@ export default function AboutPage() {
             label="At a glance"
             layers={[
               { title: "15+ years experience", sub: "since 2011", tools: ["LLP"], icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...sl}><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-3" /></svg> },
-              { title: "400+ businesses", sub: "served", tools: ["45+ live"], icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...sl}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.9" /></svg> },
+              { title: "400+ businesses", sub: "served", tools: [`${PROJECT_COUNT}+ live`], icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...sl}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.9" /></svg> },
               { title: "DPIIT recognised", sub: "+ Udyam", tools: ["Govt."], icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...sl}><path d="M12 2l8 3v6c0 5-3.4 9-8 11-4.6-2-8-6-8-11V5z" /><path d="M9 12l2 2 4-4" /></svg> },
               { title: "On-time delivery", sub: "a written commitment", tools: ["AMC"], icon: <svg viewBox="0 0 24 24" stroke="currentColor" {...sl}><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg> },
             ]}
@@ -168,7 +169,17 @@ export default function AboutPage() {
             {TEAM.map((m, i) => (
               <article className="tm-card reveal" data-d={(i % 4) + 1} key={m.name}>
                 <div className="tm-photo">
-                  <span className="tm-initials">{m.initials}</span>
+                  {m.image ? (
+                    <Image
+                      src={m.image}
+                      alt={m.name}
+                      fill
+                      sizes="(max-width: 680px) 50vw, (max-width: 980px) 33vw, 280px"
+                      style={{ objectFit: "cover", objectPosition: "top center" }}
+                    />
+                  ) : (
+                    <span className="tm-initials">{m.initials}</span>
+                  )}
                 </div>
                 <div className="tm-info">
                   <div className="nm">{m.name}</div>

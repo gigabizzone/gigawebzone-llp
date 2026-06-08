@@ -13,6 +13,7 @@ import { PageCta } from "@/components/service/PageCta";
 import { Shield } from "@/components/icons";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo";
+import { PROJECT_COUNT } from "@/lib/data/projects";
 
 const DESCRIPTION =
   "Custom web application & full-stack website development by GigaWebZone — React, Next.js, Node, Laravel. Headless builds, APIs, performance engineering. DPIIT-recognised, 400+ businesses served.";
@@ -57,7 +58,7 @@ export default function WebDevelopmentPage() {
         secondaryLabel="See web projects"
         proof={[
           { count: 400, suffix: "+", label: "businesses served" },
-          { count: 45, suffix: "+", label: "live projects" },
+          { count: PROJECT_COUNT, suffix: "+", label: "live projects" },
           { count: 98, label: "avg Lighthouse" },
         ]}
         visual={
@@ -246,6 +247,7 @@ export default function WebDevelopmentPage() {
             black boxes.
           </SectionHead>
           <Steps
+            connected
             steps={[
               { num: "01", title: "Discover & scope", body: "We map goals, users and requirements, then lock a fixed scope, timeline and quote.", when: "Week 1" },
               { num: "02", title: "Design & architect", body: "UX flows, a token-based design system, and the technical architecture — signed off before code.", when: "Week 1–2" },
@@ -276,9 +278,9 @@ export default function WebDevelopmentPage() {
         title="Live, in production, doing their job."
         titleStyle={{ fontSize: "clamp(30px,4vw,46px)", marginTop: 16 }}
         items={[
-          { tags: ["E-commerce", "Full-stack"], title: "Devintech", desc: "A custom e-commerce platform with catalog, payments and order management.", ph: "screenshot · devintech.net" },
-          { tags: ["Fintech", "Web app"], title: "MyLoanMantra", desc: "A trust-first loan-services journey with secure, frictionless application flows.", ph: "screenshot · myloanmantra.co.in" },
-          { tags: ["Automotive", "E-commerce"], title: "GroundZero", desc: "A performance-focused commerce build for an automotive accessories brand.", ph: "screenshot · groundzero.net.in" },
+          { tags: ["E-commerce", "Full-stack"], title: "Devintech", desc: "A custom e-commerce platform with catalog, payments and order management.", domain: "devintech.net" },
+          { tags: ["Fintech", "Web app"], title: "MyLoanMantra", desc: "A trust-first loan-services journey with secure, frictionless application flows.", domain: "myloanmantra.co.in" },
+          { tags: ["Automotive", "E-commerce"], title: "GroundZero", desc: "A performance-focused commerce build for an automotive accessories brand.", domain: "groundzero.net.in" },
         ]}
       />
 

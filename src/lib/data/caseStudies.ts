@@ -128,28 +128,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       title: "Founder & CEO, GroundZero LLP",
       initials: "RA",
     },
-  },
-  {
-    slug: "linguist",
-    name: "Linguist",
-    domain: "linguist.co.in",
-    sector: "live · e-learning",
-    tags: ["Education", "LMS"],
-    summary: "An independent educator, now running a real online learning business.",
-    challenge:
-      "An independent language educator needed to move beyond ad-hoc classes — with no structured way to enrol students, deliver lessons online, or track progress.",
-    solution:
-      "A full learning management platform: course catalog, enrolment, lesson delivery, assessments and student dashboards — built to scale as the catalog grows.",
-    result:
-      "Students enrol and learn online end to end, and the educator runs a real e-learning business instead of juggling spreadsheets.",
-    stack: ["WordPress", "LMS", "WooCommerce", "PHP"],
-    results: [
-      { v: "LMS", k: "Courses & enrolment" },
-      { v: "Dashboards", k: "Student progress" },
-      { v: "Online", k: "Payments built in" },
-    ],
-  },
-  {
+  },  {
     slug: "the-k-junction",
     name: "The K Junction",
     domain: "thekjunction.com",
@@ -188,27 +167,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { v: "UPI & cards", k: "Frictionless checkout" },
       { v: "Self-serve", k: "Easy to manage" },
     ],
-  },
-  {
-    slug: "sattvam-agro",
-    name: "Sattvam Agro",
-    domain: "sattvamagro.in",
-    sector: "live · e-commerce",
-    tags: ["Agro", "E-commerce"],
-    summary: "An agro business online — easy to run, ready to grow.",
-    challenge:
-      "An agro business with no online sales channel and a product catalog that was painful to manage.",
-    solution:
-      "An agro-commerce store with catalog, payments and order management — simple for the team, clear for customers.",
-    result: "The business sells online with a store that's easy to run and ready to grow.",
-    stack: ["WordPress", "WooCommerce", "Payments", "Inventory"],
-    results: [
-      { v: "Agro-commerce", k: "Online store" },
-      { v: "Orders", k: "Managed in one place" },
-      { v: "UPI & cards", k: "Built-in payments" },
-    ],
-  },
-];
+  },];
 
 export const caseStudyBySlug = (slug: string) =>
   CASE_STUDIES.find((c) => c.slug === slug);

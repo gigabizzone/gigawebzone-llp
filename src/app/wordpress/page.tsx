@@ -192,9 +192,9 @@ export default function WordPressPage() {
         title="A small slice of 400+ builds."
         titleStyle={{ fontSize: "clamp(30px,4vw,46px)", marginTop: 16 }}
         items={[
-          { tags: ["WooCommerce", "E-commerce"], title: "Ayuratan", desc: "A WooCommerce store for a wellness brand — catalog, payments and a conversion-tuned checkout.", ph: "screenshot · ayuratan.com" },
-          { tags: ["Healthcare", "WordPress"], title: "Borneo Hospitals", desc: "A multi-department hospital site with services, doctors and enquiry flows.", ph: "screenshot · borneohospitals.com" },
-          { tags: ["WordPress", "Custom theme"], title: "Doctor WordPress", desc: "A custom WordPress build with bespoke theming and content management.", ph: "screenshot · doctorwordpress.in" },
+          { tags: ["WooCommerce", "E-commerce"], title: "Ayuratan", desc: "A WooCommerce store for a wellness brand — catalog, payments and a conversion-tuned checkout.", domain: "ayuratan.com" },
+          { tags: ["Healthcare", "WordPress"], title: "Borneo Hospitals", desc: "A multi-department hospital site with services, doctors and enquiry flows.", domain: "borneohospitals.com" },
+          { tags: ["WordPress", "Custom theme"], title: "Doctor WordPress", desc: "A custom WordPress build with bespoke theming and content management.", domain: "doctorwordpress.in" },
         ]}
       />
 

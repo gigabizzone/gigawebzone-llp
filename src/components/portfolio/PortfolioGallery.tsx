@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { ProjectShot } from "@/components/ui/ProjectShot";
 import {
   PROJECTS,
   PORTFOLIO_FILTERS,
@@ -43,7 +44,11 @@ export function PortfolioGallery() {
           const tags = p.slug ? ["Case study", ...p.tags] : p.tags;
           const inner = (
             <>
-              <div className="shot ph" data-ph={p.domain} />
+              <ProjectShot
+                domain={p.domain}
+                alt={`${p.name} website screenshot`}
+                sizes="(max-width: 620px) 100vw, (max-width: 920px) 50vw, 300px"
+              />
               <div className="gm">
                 <div className="gtags">
                   {tags.map((t) => (

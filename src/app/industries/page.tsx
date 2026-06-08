@@ -4,9 +4,10 @@ import { SectionHead } from "@/components/service/SectionHead";
 import { IndustriesExplorer } from "@/components/industries/IndustriesExplorer";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "@/components/icons";
-import { CONTACT } from "@/lib/site";
+import { CONSULT_HREF } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbJsonLd } from "@/lib/seo";
+import { PROJECT_COUNT } from "@/lib/data/projects";
 
 export const metadata: Metadata = {
   title: "Industries We Build For — Education, Healthcare, E-commerce & more",
@@ -31,7 +32,7 @@ export default function IndustriesPage() {
         lead="Clinics, colleges, professional firms, founders and brands — we've shipped for businesses like yours. Pick your sector and see the proof."
         proof={[
           { count: 9, label: "industries served" },
-          { count: 45, suffix: "+", label: "live projects" },
+          { count: PROJECT_COUNT, suffix: "+", label: "live projects" },
           { count: 400, suffix: "+", label: "businesses served" },
         ]}
         ctas={
@@ -40,7 +41,7 @@ export default function IndustriesPage() {
               Find your industry
               <ArrowRight />
             </Button>
-            <Button href="#contact" variant="ghost" size="lg">
+            <Button href={CONSULT_HREF} variant="ghost" size="lg">
               Get a Free Consultation
             </Button>
           </div>
@@ -67,12 +68,12 @@ export default function IndustriesPage() {
             Don&apos;t see your industry? We&apos;ve probably built for it.
           </h2>
           <p className="reveal" data-d="2">
-            Across 45+ live projects and 400+ businesses, the patterns repeat. Tell us your
+            Across {PROJECT_COUNT}+ live projects and 400+ businesses, the patterns repeat. Tell us your
             sector and goals — we&apos;ll show you the most relevant proof and a clear path
             forward.
           </p>
           <div className="hero-ctas reveal" data-d="3" style={{ justifyContent: "center" }}>
-            <Button href={CONTACT.phoneHref} variant="primary" size="lg">
+            <Button href={CONSULT_HREF} variant="primary" size="lg">
               Get a Free Consultation
               <ArrowRight />
             </Button>
