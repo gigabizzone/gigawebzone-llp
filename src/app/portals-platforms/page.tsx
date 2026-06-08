@@ -173,7 +173,6 @@ export default function PortalsPlatformsPage() {
             icon={<Shield />}
             title="The On-Time Delivery Commitment"
             body="Platforms are big projects — so we agree a delivery date up front and stand behind it. If a milestone we control slips, there's a defined remedy, in writing, before we start."
-            tbd
             ctaLabel="Scope your platform"
             ctaHref="#contact"
           />

@@ -194,7 +194,6 @@ export default function AppDevelopmentPage() {
             icon={<Shield />}
             title="The On-Time Delivery Commitment"
             body="We agree a delivery date up front and stand behind it. If a milestone we control slips, you're not left guessing — there's a defined remedy, in writing, before we start."
-            tbd
             ctaLabel="Start your app"
             ctaHref="#contact"
           />

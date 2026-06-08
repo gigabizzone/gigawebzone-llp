@@ -69,7 +69,7 @@ export function FeaturedWork() {
           <h2>Live builds across the industries we know.</h2>
           <p>
             Clinics, colleges, professional firms and commerce brands — real platforms in
-            production. (Project screenshots are placeholders for now.)
+            production.
           </p>
         </div>
         <div className="pf-grid">

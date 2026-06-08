@@ -128,7 +128,7 @@ export default function PortfolioPage() {
           <SectionHead center eyebrow="The full library" title={`Browse all ${PROJECTS.length} live projects.`}>
             Filter by category, then visit any site. Projects tagged{" "}
             <Link href="#work" className="accent-text">Case study</Link> open a full
-            write-up. (Thumbnails are placeholders — real screenshots drop straight in.)
+            write-up.
           </SectionHead>
           <PortfolioGallery />
         </div>
