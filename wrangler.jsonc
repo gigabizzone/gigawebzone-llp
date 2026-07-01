@@ -1,5 +1,5 @@
 {
-  "name": "your-project-name", // Change this!
+  "name": "gigawebzone-llp", // Change this!
   "main": ".open-next/worker.js",
   "compatibility_date": "2024-12-30",
   "compatibility_flags": [
