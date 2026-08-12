@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/contact", priority: 0.8, freq: "monthly" },
     { path: "/privacy", priority: 0.3, freq: "yearly" },
     { path: "/terms", priority: 0.3, freq: "yearly" },
+    { path: "/refund-policy", priority: 0.3, freq: "yearly" },
   ];
 
   const lastModified = new Date();

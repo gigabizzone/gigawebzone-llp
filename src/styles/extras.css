@@ -285,6 +285,23 @@ a.uc:hover {
 .footer-legal a:hover {
   color: var(--text);
 }
+.footer-legal .legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+}
+.footer-legal .legal-links .sep {
+  font-size: 13.5px;
+  color: var(--text-3);
+  opacity: 0.5;
+}
+@media (max-width: 620px) {
+  /* Drop the dots when the links wrap onto their own lines. */
+  .footer-legal .legal-links .sep {
+    display: none;
+  }
+}
 
 /* ---- Legal pages (Privacy, Terms) ----------------------------------- */
 .legal {

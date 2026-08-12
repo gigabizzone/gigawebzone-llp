@@ -14,7 +14,7 @@ export default function TermsPage() {
   return (
     <LegalLayout
       title="Terms of Service"
-      updated="June 2026"
+      updated="August 2026"
       intro="These terms govern your use of the GigaWebZone website and the engagement of our services. By using this site or working with us, you agree to them."
     >
       <h2>1. About these terms</h2>
@@ -48,11 +48,13 @@ export default function TermsPage() {
         timely client feedback, content and approvals.
       </p>
 
-      <h2>5. Payments</h2>
+      <h2>5. Payments, cancellation &amp; refunds</h2>
       <p>
         Fees, milestones and payment schedules are set out in the project agreement. Unless
         stated otherwise, invoices are payable as scheduled, and work may be paused for overdue
-        payments. Taxes apply as per Indian law.
+        payments. Taxes apply as per Indian law. Cancellation and refund terms — including care
+        plans and AMCs — are set out in our{" "}
+        <Link href="/refund-policy">Refund &amp; Cancellation Policy</Link>.
       </p>
 
       <h2>6. Client responsibilities</h2>

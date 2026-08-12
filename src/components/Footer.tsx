@@ -101,8 +101,13 @@ export function Footer() {
         <div className="footer-bottom">
           <div className="footer-legal">
             <span className="cprt">© 2026 GigaWebZone LLP. Design, Develop, Dominate.</span>
-            <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/terms">Terms of Service</Link>
+            <nav className="legal-links" aria-label="Legal">
+              <Link href="/privacy">Privacy Policy</Link>
+              <span className="sep" aria-hidden="true">·</span>
+              <Link href="/terms">Terms of Service</Link>
+              <span className="sep" aria-hidden="true">·</span>
+              <Link href="/refund-policy">Refund Policy</Link>
+            </nav>
           </div>
           <div className="footer-badges">
             <span className="b">DPIIT Recognised</span>
